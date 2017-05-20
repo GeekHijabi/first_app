@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Googl</title>
+
+    <link rel="stylesheet" href="{{url_for("static",filename="style.css")}}">
+
 </head>
 
 <body>
@@ -25,31 +28,58 @@
                     }
                 </style>
                 <div style="background-size:272px 92px;height:92px;width:272px" title="Google" align="left" id="hplogo" onload="window.lol&&lol()">
-                    <img src="{{url_for("static", filename="google-logo.PNG ")}}"/>
-                    <div class="logo-subtext">Nigeria</div>
+                    <img src="{{url_for("static", filename="google-logo.PNG ")}}" />
                 </div>
             </div>
+            
+        <form class="tsf" action="/search" style="overflow:visible" id="tsf" method="GET" name="f" onsubmit="return q.value!=''"
+            role="search">
+            <div data-jibp="" data-jiis="uc" id="tophf">
+                <input name="site" value="" type="text" id="stylebox">
+            </div>
+        </form>
         </div>
         <div style="height:118px"></div>
         <div data-jibp="h" data-jiis="uc" id="prm-pt" style="margin-top:12px">
+            <style>
+                #als {
+                    font-size: small;
+                    margin-bottom: 24px
+                }
+
+                #_eEe {
+                    display: inline-block;
+                    line-height: 28px;
+                }
+
+                #_eEe a {
+                    padding: 0 3px;
+                }
+
+                ._lEe {
+                    display: inline-block;
+                    margin: 0 2px;
+                    white-space: nowrap
+                }
+
+                ._PEe {
+                    display: inline-block;
+                    margin: 0 2px
+                }
+            </style>
             <script>
                 window.gbar && gbar.up && gbar.up.tp && gbar.up.tp();
             </script>
             <div id="als">
-                <div id="_eEe">Google.com.ng offered in: <a href="https://www.google.com.ng/setprefs?sig=0_aGR26-MLbJlPyxIZX8V8FxJvF2s%3D&amp;hl=ha&amp;source=homepage"
-                        onmousedown="return rwt(this,'','','','','AFQjCNGqz-LIr3t7EEJobib3rVimFIVLCQ','LsfS8Z3yeyYf8V6BhGnXmQ','0ahUKEwjd6K2si_7TAhWC1ywKHSDoD6sQ2ZgBCAw','','',event)">Hausa</a>                    <a href="https://www.google.com.ng/setprefs?sig=0_aGR26-MLbJlPyxIZX8V8FxJvF2s%3D&amp;hl=ig&amp;source=homepage"
-                        onmousedown="return rwt(this,'','','','','AFQjCNHknZ3Ek2a0-EStKnrPFeMMS7j27w','l1o5BZkJ2P2QE5KqF_NcnA','0ahUKEwjd6K2si_7TAhWC1ywKHSDoD6sQ2ZgBCA0','','',event)">Igbo</a>                    <a href="https://www.google.com.ng/setprefs?sig=0_aGR26-MLbJlPyxIZX8V8FxJvF2s%3D&amp;hl=yo&amp;source=homepage"
-                        onmousedown="return rwt(this,'','','','','AFQjCNH3-Efbdr5cXi8DaplmW-ZsMFtH-w','512wskW_tha8dv62thbS4w','0ahUKEwjd6K2si_7TAhWC1ywKHSDoD6sQ2ZgBCA4','','',event)">Èdè Yorùbá</a>                    <a href="https://www.google.com.ng/setprefs?sig=0_aGR26-MLbJlPyxIZX8V8FxJvF2s%3D&amp;hl=pcm&amp;source=homepage"
-                        onmousedown="return rwt(this,'','','','','AFQjCNG8nDmj2BWpewfr-naoF-ke5oXA8g','FCwryeyAXKJ1BwfXDAmMiQ','0ahUKEwjd6K2si_7TAhWC1ywKHSDoD6sQ2ZgBCA8','','',event)">Pidgin</a>                    </div>
+
+                <div id="_eEe">Google.com.ng offered in: <a href="https://www.google.com.ng/setprefs?sig=0_h5BEgDnE3e6V8Ov14IKnPRw0h1A%3D&amp;hl=ha&amp;source=homepage"
+                        onmousedown="return rwt(this,'','','','','AFQjCNERR6NtmEIJkXDtrmKwM46Uv8jyOg','zzYHyEjEDH8NXH1DyM_gIg','0ahUKEwi45sqgi_7TAhWJjSwKHQmgDPYQ2ZgBCAw','','',event)">Hausa</a>                    <a href="https://www.google.com.ng/setprefs?sig=0_h5BEgDnE3e6V8Ov14IKnPRw0h1A%3D&amp;hl=ig&amp;source=homepage"
+                        onmousedown="return rwt(this,'','','','','AFQjCNHt_OKej7EPaGSoP4dsGq6ggxx1Ag','w4kXabDygZHOLQb-82WYkA','0ahUKEwi45sqgi_7TAhWJjSwKHQmgDPYQ2ZgBCA0','','',event)">Igbo</a>                    <a href="https://www.google.com.ng/setprefs?sig=0_h5BEgDnE3e6V8Ov14IKnPRw0h1A%3D&amp;hl=yo&amp;source=homepage"
+                        onmousedown="return rwt(this,'','','','','AFQjCNH92NSrmBEKb7vpo9LlFxLhri2t7Q','Sc3vrhbYQO4rab_TFywQ4A','0ahUKEwi45sqgi_7TAhWJjSwKHQmgDPYQ2ZgBCA4','','',event)">Èdè Yorùbá</a>                    <a href="https://www.google.com.ng/setprefs?sig=0_h5BEgDnE3e6V8Ov14IKnPRw0h1A%3D&amp;hl=pcm&amp;source=homepage"
+                        onmousedown="return rwt(this,'','','','','AFQjCNEbClkRAjxShsobI4XNpXwZC4HrYQ','T29GrIFCx5cbSQfDwqPA4A','0ahUKEwi45sqgi_7TAhWJjSwKHQmgDPYQ2ZgBCA8','','',event)">Pidgin</a>                    </div>
             </div>
             <div id="swml"></div>
         </div>
-        <form class="tsf" action="/search" style="overflow:visible" id="tsf" method="GET" name="f" onsubmit="return q.value!=''"
-            role="search">
-            <div data-jibp="" data-jiis="uc" id="tophf">
-                <input name="site" value="" type="text">
-                </div>
-        </form>
     </center>
     <script>
         function lol() {
