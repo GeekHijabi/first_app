@@ -27,11 +27,18 @@ def name():
 def here():
     username = request.args.get('username') 
     surname =  request.args.get('surname')
-    no_of_times = int(request.args.get('no_of_times') or '1')
+    try:
+        no_of_times = int(request.args.get('no_of_times'))
+    except ValueError:
+        no_of_times = 1
+
+    if no_of_times < 1:
+        no_of_times = 1
     
-    username = (str(username or str()) + str(surname or str())) or 'World'
+    username = (str(username or str()) + ' ' + str(surname or str())) or 'World'
 
     return render_template('index3.html', username=username, no_of_times=no_of_times)
 
 if __name__ == '__main__':
     app.run(debug=True)
+
