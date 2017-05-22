@@ -25,5 +25,13 @@
 .left-content{
     display: inline-block;
     width: 60%;
+}
 
+.error{
+    margin-top: 1em;
+    text-align: right;
+    color: tomato;
+    padding: 3px;
+    font-size: medium;
+    font-style: italic;
 }

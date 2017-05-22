@@ -1,6 +1,14 @@
 {%extends'index.html' %}
 {% block body %}
  <div>
+    {%if not search_param %}
+     <div class="error">
+      <h2>You did not type in a search word</h2>
+     </div>
+     {{ super () }}
+     </div>
+     {% else %}
+<div>
  <div class="left-content">
      {% for data in results %}
      <div class="g">
@@ -12,8 +20,7 @@
                         data-href="http://jinja.pocoo.org/">{{data.title}}</a></h3>
                 {{data.summary |safe}}
             </div>
-        </div>
-         
+        </div>         
     </div>
    {% endfor %}
  </div>
@@ -21,4 +28,5 @@
       You searched for Jinja
   </div>
 </div>
+{% endif %}
 {% endblock %}
