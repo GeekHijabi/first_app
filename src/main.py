@@ -1,6 +1,11 @@
 from flask import Flask, render_template, request
+from flask_bootstrap import Bootstrap
+
 
 app = Flask(__name__, template_folder='templates')
+# bootstrap = Bootstrap()
+# bootstrap.init(app)
+bootstrap = Bootstrap(app)
 
 
 @app.route('/')
@@ -25,7 +30,8 @@ def search():
                 </div>
                  """
     }
-    return render_template('results.html',results =[data,data], title="Jinja")
+    return render_template('results.html', results =[data,data], site=site)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

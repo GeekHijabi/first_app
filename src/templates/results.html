@@ -1,7 +1,7 @@
-{%extends'index.html' %}
+{%extends'base.html' %}
 {% block body %}
  <div>
-    {%if not search_param %}
+    {%if not site %}
      <div class="error">
       <h2>You did not type in a search word</h2>
      </div>
@@ -25,7 +25,7 @@
    {% endfor %}
  </div>
   <div class="right-content">
-      You searched for Jinja
+      You searched for {{ site }}
   </div>
 </div>
 {% endif %}
