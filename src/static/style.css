@@ -1,0 +1,37 @@
+#stylebox {
+   width: 60%;
+    margin-top: 46px;
+    height: 35px;
+    font-size: 20px; 
+}
+
+.g{
+    width: 60%;
+    margin-left: 5.5em;
+    margin-top: 5em;
+    border-bottom-color: black;
+    border-bottom-width: 2px;
+    border-bottom-style: dashed;
+    padding-bottom: 20px;
+}
+
+.right-content{
+    display: inline-block;
+    width: 39%;
+    vertical-align: top;
+    margin-top: 5em;
+}
+
+.left-content{
+    display: inline-block;
+    width: 60%;
+}
+
+.error{
+    margin-top: 1em;
+    text-align: right;
+    color: tomato;
+    padding: 3px;
+    font-size: medium;
+    font-style: italic;
+}

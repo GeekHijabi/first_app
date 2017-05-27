@@ -1,6 +1,11 @@
 from flask import Flask, render_template, request
+from flask_bootstrap import Bootstrap
+
 
 app = Flask(__name__, template_folder='templates')
+# bootstrap = Bootstrap()
+# bootstrap.init(app)
+bootstrap = Bootstrap(app)
 
 
 @app.route('/')
@@ -8,36 +13,25 @@ def home():
     username = request.args.get('username')
     return render_template('index.html', username=username)
 
+@app.route('/search')
+def search():
+    site = request.args.get('site')
+    data={
+        "title":"Jinja",
+        "url": "/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwi6zevKr_7TAhUJiSwKHblZAeUQFgghMAA&amp;url=http%3A%2F%2Fjinja.pocoo.org%2F&amp;usg=AFQjCNFKiObWsstA_tSpH_tNsUK_VKY4EA&amp;sig2=eFKaff1ZCmdBpLeG3og3Uw",
+        "summary":""" <div class="s">
+                    <div>
+                        <div class="f kv _SWb" style="white-space:nowrap"><cite class="_Rm">jinja.pocoo.org/</cite>
+                            <div class="action-menu ab_ctl"><a class="_Fmb ab_button" href="#" id="am-b0" aria-label="Result details" aria-expanded="false"
+                                    aria-haspopup="true" role="button" jsaction="m.tdd;keydown:m.hbke;keypress:m.mskpe" data-ved="0ahUKEwi6zevKr_7TAhUJiSwKHblZAeUQ7B0IIjAA"><span class="mn-dwn-arw"></span></a>
+                            
+                            </div>
+                        </div><span class="st"><em>Jinja</em> is Beautiful. {% extends "layout.html" %} {% block body %} &lt;ul&gt; {% for user in users %} &lt;li&gt;&lt;a href="{{ user.url }}"&gt;{{ user.username }}&lt;/a&gt;&lt;/li&gt; {% endfor&nbsp;...</span></div>
+                </div>
+                 """
+    }
+    return render_template('results.html', results =[data,data], site=site)
 
-@app.route('/if')
-def name():
-    username = request.args.get('username')
-    surname = request.args.get('surname')
-    if username and surname:
-        username = username + ' ' + surname
-    elif username and not surname:
-        username = username
-    elif surname and not username:
-        username = surname
-    else:
-        username = 'World'
-    return render_template('index2.html', username=username)
-
-@app.route('/here')
-def here():
-    username = request.args.get('username') 
-    surname =  request.args.get('surname')
-    try:
-        no_of_times = int(request.args.get('no_of_times'))
-    except ValueError:
-        no_of_times = 1
-
-    if no_of_times < 1:
-        no_of_times = 1
-    
-    username = (str(username or str()) + ' ' + str(surname or str())) or 'World'
-
-    return render_template('index3.html', username=username, no_of_times=no_of_times)
 
 if __name__ == '__main__':
     app.run(debug=True)
